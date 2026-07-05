@@ -8,5 +8,3 @@
 	gpgsign = false
 [pull]
 	rebase = true
-[maintenance]
-	repo = /home/jonasz/library
