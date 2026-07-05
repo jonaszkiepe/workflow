@@ -1,0 +1,4 @@
+[submodule "dotfiles/.config/nvim/vendor/kanagawa.nvim"]
+	path = dotfiles/.config/nvim/vendor/kanagawa.nvim
+	url = https://github.com/jonaszkiepe/kanagawa.nvim.git
+	branch = master

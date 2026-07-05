@@ -10,10 +10,16 @@ if not vim.loop.fs_stat(lazypath) then vim.fn.system({
 }) end
 vim.opt.rtp:prepend(lazypath)
 
+-- kanagawa is vendored as a git submodule under this config's vendor/ dir.
+-- The config is symlinked from the dotfiles repo, so resolve init.lua back to
+-- the repo's real location to find the submodule (works wherever the repo lives).
+local nvim_dir = vim.fn.fnamemodify(vim.fn.resolve(vim.fn.stdpath("config") .. "/init.lua"), ":h")
+local kanagawa_dir = nvim_dir .. "/vendor/kanagawa.nvim"
 
 require("lazy").setup({
     {
-        "jonaszkiepe/kanagawa.nvim",
+        dir = kanagawa_dir,
+        name = "kanagawa.nvim",
         config = config.kanagawa
     },
 	{

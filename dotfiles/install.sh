@@ -26,7 +26,9 @@ while IFS= read -r rel; do
 
     ln -s "$src" "$target"
     echo "linked:    $rel -> $src"
-done < <(find "$SRC" -type f ! -name 'install.sh' -printf '%P\n' | sort)
+# vendor/ holds git submodules (e.g. the kanagawa.nvim fork) — loaded in place
+# from the repo, never symlinked file-by-file into $HOME.
+done < <(find "$SRC" -type f ! -name 'install.sh' -not -path '*/vendor/*' -printf '%P\n' | sort)
 
 # ssh is picky about permissions
 [ -d "$HOME/.ssh" ] && chmod 700 "$HOME/.ssh"
