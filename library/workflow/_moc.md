@@ -17,6 +17,7 @@ is the knowledge layer on top.
 ## Notes
 - [[architecture]] — **how it works** (to write). The technical source of truth.
 - [[tmux-resurrect]] — autosave fix (status-off broke continuum's hook → systemd timer).
+- [[dir-symlink-tracking]] — idea (backlog): whole-dir symlinks so new config auto-tracks.
 - [[board]] — the plan (big features) · [[log]] — full history (everything, dated).
 
 ## Status (2026-07-05)

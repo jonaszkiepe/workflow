@@ -23,6 +23,7 @@ Scan every note's purpose at once: `grep -rh "^summary:" "/home/jonasz/workflow/
 ### workflow
 - [[workflow/architecture]] — **how it works** (to write).
 - [[workflow/tmux-resurrect]] — why autosave silently died + the systemd-timer fix.
+- [[workflow/dir-symlink-tracking]] — idea: whole-dir symlinks so new config auto-tracks.
 
 ## Meta
 - [[_meta/workflow]] · [[_meta/conventions]] · [[_meta/claude-efficiency]] · [[_meta/prompt-rules]] · [[_meta/suggestions]] · [[_meta/project-rules]]
