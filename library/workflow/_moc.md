@@ -31,3 +31,7 @@ is the knowledge layer on top.
 - `~/.ai` stays a separate sibling repo (different lifecycle + sensitivity); combined at
   bootstrap level only, symlinked into `library/_meta`.
 - `.Xauthority` excluded from tracking (machine-specific X session cookie, effectively a secret).
+- `kanagawa.nvim` (a customized fork carrying real patches) is **vendored as a git
+  submodule** at `dotfiles/.config/nvim/vendor/kanagawa.nvim`, loaded via lazy `dir=`
+  — repo is self-contained, not dependent on the GitHub fork surviving. Plugins in
+  `vendor/` are loaded in place, never file-symlinked (install.sh skips `vendor/`).
