@@ -1,0 +1,12 @@
+[user]
+	email = loafofbread63@gmail.com
+	name = jonaszkiepe
+	signingkey = 74C33E7D6919A3DBD69645D403A78C14FAE4F832
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = false
+[pull]
+	rebase = true
+[maintenance]
+	repo = /home/jonasz/library

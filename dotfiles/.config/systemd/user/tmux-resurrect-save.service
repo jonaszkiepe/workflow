@@ -1,0 +1,7 @@
+[Unit]
+Description=tmux-resurrect interval save
+
+[Service]
+Type=oneshot
+ExecCondition=/bin/sh -c '/usr/bin/tmux info >/dev/null 2>&1'
+ExecStart=%h/.tmux/plugins/tmux-resurrect/scripts/save.sh quiet

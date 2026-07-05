@@ -1,0 +1,57 @@
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id alacritty
+exec --no-startup-id zen-browser
+exec --no-startup-id obsidian
+
+bindsym Mod1+Shift+f fullscreen toggle
+bindsym Mod1+Shift+q kill
+bindsym Mod1+Shift+r restart
+bindsym Mod1+Shift+o exec "redshift -O 5000K"
+bindsym Mod1+Shift+g exec "i3-msg exit"
+bindsym Mod1+Shift+d exec "dmenu_run -l 30 -fn JetBrainsMonoNerdFont-14 -nb black"
+bindsym Mod1+Shift+s exec "passmenu -l 30 -fn JetBrainsMonoNerdFont-14 -nb black"
+
+bindsym Mod1+z workspace 1
+bindsym Mod1+x workspace 2
+bindsym Mod1+c workspace 3
+bindsym Mod1+v workspace 4
+bindsym Mod1+b workspace 5
+bindsym Mod1+n workspace 6
+bindsym Mod1+Shift+z move container to workspace 1
+bindsym Mod1+Shift+x move container to workspace 2
+bindsym Mod1+Shift+c move container to workspace 3
+bindsym Mod1+Shift+v move container to workspace 4
+bindsym Mod1+Shift+b move container to workspace 5
+bindsym Mod1+Shift+n move container to workspace 6
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+bindsym Mod1+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym Mod1+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
+bindsym Mod1+XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym Mod1+XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym Mod1+Shift+XF86MonBrightnessUp exec --no-startup-id brightnessctl set 100%
+bindsym Mod1+Shift+XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%
+
+font pango:JetBrainsMonoNerdFont
+
+assign [class="zen"] → 1
+assign [class="Alacritty"] → 2
+assign [class="obsidian"] → 3
+
+for_window [class="^.*"] border pixel 0
+default_border pixel 0
+for_window [class="Tk"] floating enable
+
+bar {
+        status_command i3status
+        i3bar_command i3bar -t
+    colors {
+        background #1f1f28
+    }
+}
