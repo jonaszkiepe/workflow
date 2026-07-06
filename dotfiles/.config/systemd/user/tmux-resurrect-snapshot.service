@@ -1,0 +1,6 @@
+[Unit]
+Description=Snapshot newest tmux-resurrect save into the dotfiles repo
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/scripts/tmux-resurrect-snapshot.sh

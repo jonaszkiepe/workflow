@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily tmux-resurrect snapshot into the dotfiles repo
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=tmux-resurrect-snapshot.service
+
+[Install]
+WantedBy=timers.target
