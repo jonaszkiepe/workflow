@@ -1,9 +1,9 @@
 [Unit]
-Description=Run tmux-resurrect save every 15 minutes
+Description=Run tmux-resurrect save every 5 minutes
 
 [Timer]
 OnBootSec=1min
-OnUnitActiveSec=15min
+OnUnitActiveSec=5min
 Unit=tmux-resurrect-save.service
 
 [Install]
