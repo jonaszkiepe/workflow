@@ -30,6 +30,7 @@ alias dotfiles='git -C /home/jonasz/workflow'
 alias gitignore='cp ~/.config/scripts/ignoretemplate .gitignore'
 alias codexinstall='npm i -g @openai/codex'
 alias docker-desktop="/opt/docker-desktop/bin/docker-desktop > /dev/null 2>&1 &"
+alias pushprojects='~/.config/scripts/push-projects.sh'
 
 function fcd() {
     local find
