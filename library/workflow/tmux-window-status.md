@@ -42,7 +42,7 @@ and the **whole label is coloured** by state. It works like a read/unread light:
 | `done` | **green** | unread — Claude finished its work | `Stop` |
 
 Most transitions come from **Claude Code hooks** (`~/.claude/settings.json`,
-untracked — see the version-control suggestion in `~/.ai/suggestions.md`), which
+untracked — see the version-control suggestion in `~/ai-workflow/suggestions.md`), which
 target the window via `$TMUX_PANE`: `tmux set -w -t "$TMUX_PANE" @claude_state
 <value>`. The **read reset is a tmux hook**, not a Claude one:
 `set-hook -g pane-focus-in 'if -F "#{@claude_state}" "set -w @claude_state active"'`

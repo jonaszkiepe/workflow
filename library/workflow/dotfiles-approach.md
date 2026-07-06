@@ -47,4 +47,4 @@ needs.
 
 Recovered at 3rd gardening (2026-07-05) from a forked Claude memory: the
 planning session ran in pre-rename `~/workspace`, whose per-project memory dir
-wasn't wired into `~/.ai/memories`, so this rationale never reached the vault.
+wasn't wired into `~/ai-workflow/memories`, so this rationale never reached the vault.
