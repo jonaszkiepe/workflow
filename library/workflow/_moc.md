@@ -2,7 +2,7 @@
 project: workflow
 type: moc
 audience: both
-updated: 2026-07-05
+updated: 2026-07-06
 summary: Map of content for workflow.
 ---
 
@@ -17,6 +17,7 @@ is the knowledge layer on top.
 ## Notes
 - [[architecture]] — **how it works** (to write). The technical source of truth.
 - [[tmux-resurrect]] — autosave fix (status-off broke continuum's hook → systemd timer).
+- [[tmux-window-status]] — window labels (`prefix t`, cwd names) + Claude-aware status bar via `@claude_state` hooks.
 - [[dir-symlink-tracking]] — idea (backlog): whole-dir symlinks so new config auto-tracks.
 - [[dotfiles-approach]] — why off bare-repo + the tool landscape for a later upgrade.
 - [[board]] — the plan (big features) · [[log]] — full history (everything, dated).

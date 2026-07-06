@@ -1,7 +1,7 @@
 ---
 type: moc
 audience: both
-updated: 2026-07-05
+updated: 2026-07-06
 summary: The index — every project and note with a one-line summary. Read this first.
 ---
 
@@ -23,6 +23,7 @@ Scan every note's purpose at once: `grep -rh "^summary:" "/home/jonasz/workflow/
 ### workflow
 - [[workflow/architecture]] — **how it works** (to write).
 - [[workflow/tmux-resurrect]] — why autosave silently died + the systemd-timer fix.
+- [[workflow/tmux-window-status]] — window labels + Claude-aware status bar (`@claude_state` via hooks).
 - [[workflow/dir-symlink-tracking]] — idea: whole-dir symlinks so new config auto-tracks.
 - [[workflow/dotfiles-approach]] — why off bare-repo + tool landscape (stow/dotbot/chezmoi/yadm/nix) for a later upgrade.
 

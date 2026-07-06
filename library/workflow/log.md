@@ -2,7 +2,7 @@
 project: workflow
 type: log
 audience: both
-updated: 2026-07-05
+updated: 2026-07-06
 summary: Append-only activity log — every piece of work, one dated line, newest first.
 ---
 
@@ -10,6 +10,9 @@ summary: Append-only activity log — every piece of work, one dated line, newes
 
 Every completed piece of work gets one line (newest first). Big features also live
 on [[board]]; this is the full history.
+
+## 2026-07-06
+- Made the tmux status bar a Claude dashboard → [[tmux-window-status]]. Window names now = cwd basename (bold when current, dropped `#I:`/`*`); `prefix t` labels a window (sticks + resurrect-persisted). Status bar auto-shows only for >1 window — fixed it vanishing on reload by removing the unconditional `status off` and re-evaluating via a top-level `if-shell` after the hooks (every source now lands correct). Added `@claude_state` per-window option driven by 7 Claude Code hooks (`~/.claude/settings.json`, untracked): active (grey `(c)`) on SessionStart/UserPromptSubmit/PreToolUse, pending (**green** + `(c)`) on Notification/PermissionRequest/Stop, cleared on SessionEnd. Validated formats + reload + transitions on throwaway tmux sockets. Logged a suggestion in `~/.ai` to version-control settings.json (LOCK protocol; committed there).
 
 ## 2026-07-05
 - Gardening (env session): recovered the forked memory from the pre-rename `~/workspace` planning session → [[dotfiles-approach]] (bare-repo rationale + tool survey); deleted the fork (`~/.claude/projects/-home-jonasz-workspace/memory/`) and the empty `~/workspace` husk.
