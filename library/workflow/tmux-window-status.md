@@ -58,11 +58,14 @@ The current-window format prepends `#[bold,underscore]`.
 prematurely clear yellow — but it *does* flip back to grey the instant Claude
 resumes after you approve, so multiple edits in one cycle each read
 grey→yellow→grey. `Stop`→`done` is the green "finished, unread" state; reading the
-window (or the next `UserPromptSubmit`) clears it. Only affects sessions started
-**after** the hooks were added (settings.json is read at session start).
+window (or the next `UserPromptSubmit`) clears it. The `Stop` hook is
+**focus-aware**: if the window is the session's current window *and* a focused
+client is on that session (i.e. you're already looking at it), it sets `active`
+(grey) instead of `done` — so a session you're watching finish doesn't
+needlessly light green. Only affects sessions started **after** the hooks were
+added (settings.json is read at session start).
 
 **Caveats:** window-level option → last writer wins if two Claude panes share a
-window. A crash without `SessionEnd` leaves a stale marker. If Claude finishes
-(`Stop`) while you're **already on** that window, it still goes green — no
-`pane-focus-in` fires without a focus change — until you switch away and back or
-submit a prompt.
+window. A crash without `SessionEnd` leaves a stale marker. The focus check reads
+tmux client focus at `Stop` time; if you alt-tab back *after* it fires, the marker
+reflects where focus was then (a `pane-focus-in` on return clears it anyway).
