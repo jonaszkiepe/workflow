@@ -17,6 +17,7 @@ src="$(readlink -f "$LAST")"
 # Nothing new since the last snapshot -> no commit noise.
 cmp -s "$src" "$SNAP" && exit 0
 
+mkdir -p "$(dirname "$SNAP")"
 cp "$src" "$SNAP"
 git -C "$REPO" add "$SNAP_REL"
 # Pathspec keeps unrelated dirty files out of the commit.
