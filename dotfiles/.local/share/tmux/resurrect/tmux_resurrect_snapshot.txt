@@ -1,0 +1,13 @@
+pane	projects	0	0	:Z	0	✳ Build server for Veloking	:/home/jonasz/veloking	1	claude	:claude --resume
+pane	projects	0	0	:Z	1	jonasz@archlinux:~	:/home/jonasz	0	bash	:
+pane	projects	1	0	:	0	✳ Review product list known and unknown items	:/home/jonasz/sportking	1	claude	:claude --resume
+pane	projects	1	0	:	1	jonasz@archlinux:~/sportking	:/home/jonasz/sportking	0	bash	:
+pane	projects	2	0	:	0	✳ Work on the knockback	:/home/jonasz/minecraft	1	claude	:claude
+pane	projects	3	1	:*M	0	✳ Add more windows slots and remove rename mapping	:/home/jonasz/workflow	1	claude	:claude
+pane	projects	4	0	:-	0	✳ Create environment file for dynamic paths and symlinks	:/home/jonasz/ai-workflow	1	claude	:claude
+window	projects	0	:veloking	0	:Z	a2ac,137x34,0,0{68x34,0,0,2,68x34,69,0,14}	:
+window	projects	1	:sportking	0	:	44bc,137x34,0,0{68x34,0,0,6,68x34,69,0,9}	:
+window	projects	2	:minecraft	0	:	5e8f,137x34,0,0,10	:
+window	projects	3	:workflow	1	:*M	5e91,137x34,0,0,12	:
+window	projects	4	:ai-workflow	0	:-	5e97,137x34,0,0,18	:
+state	projects	
