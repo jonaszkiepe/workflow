@@ -62,8 +62,10 @@ window (or the next `UserPromptSubmit`) clears it. The `Stop` hook is
 **focus-aware**: if the window is the session's current window *and* a focused
 client is on that session (i.e. you're already looking at it), it sets `active`
 (grey) instead of `done` — so a session you're watching finish doesn't
-needlessly light green. Only affects sessions started **after** the hooks were
-added (settings.json is read at session start).
+needlessly light green. *Implementation gotcha:* focus is read by grepping
+`#{client_flags}` for `focused` — `#{client_focused}` returns **empty** in tmux
+3.6, so the obvious variable silently never matches. Only affects sessions
+started **after** the hooks were added (settings.json is read at session start).
 
 **Caveats:** window-level option → last writer wins if two Claude panes share a
 window. A crash without `SessionEnd` leaves a stale marker. The focus check reads

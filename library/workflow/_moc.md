@@ -11,8 +11,10 @@ summary: Map of content for workflow.
 Personal workflow + machine-config repo. `dotfiles/` holds every config file (nvim,
 tmux, alacritty, i3, polybar, picom, bash, scripts) mirroring the `$HOME` layout;
 `dotfiles/install.sh` symlinks them into place (idempotent, backs up originals).
-New machine = clone this repo + run `dotfiles/install.sh`. The library (this vault)
-is the knowledge layer on top.
+`packages/` holds package manifests (`pacman-native`/`aur`/`snap`/`flatpak`) +
+`sync.sh`/`restore.sh` for reproducing the installed-package set.
+New machine = clone this repo → `dotfiles/install.sh` (configs) →
+`packages/restore.sh` (packages). The library (this vault) is the knowledge layer on top.
 
 ## Notes
 - [[architecture]] — **how it works** (to write). The technical source of truth.

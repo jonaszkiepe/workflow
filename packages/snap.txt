@@ -1,0 +1,8 @@
+bare
+core24
+curseforge
+gnome-46-2404
+gtk-common-themes
+lunar-client
+mesa-2404
+snapd
