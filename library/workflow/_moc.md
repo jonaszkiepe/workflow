@@ -32,7 +32,7 @@ New machine = clone this repo → `dotfiles/install.sh` (configs) →
 ## Key decisions
 - Plain directory + symlink script over bare-repo/chezmoi/stow: scoped repo an AI agent
   can safely work in, trivial bootstrap, lowest lock-in (easy later move to Dotbot/chezmoi).
-- `~/.ai` stays a separate sibling repo (different lifecycle + sensitivity); combined at
+- `~/ai-workflow` stays a separate repo (different lifecycle + sensitivity); combined at
   bootstrap level only, symlinked into `library/_meta`.
 - `.Xauthority` excluded from tracking (machine-specific X session cookie, effectively a secret).
 - `kanagawa.nvim` (a customized fork carrying real patches) is **vendored as a git

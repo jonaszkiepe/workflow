@@ -1,7 +1,7 @@
 ---
 type: reference
 audience: claude
-updated: 2026-07-05
+updated: 2026-07-06
 tags: [efficiency, workflow]
 summary: "workflow-specific operating rules — build gates, shared libs, MCP servers, deploy. Pairs with the general claude-efficiency rules."
 ---
@@ -9,7 +9,7 @@ summary: "workflow-specific operating rules — build gates, shared libs, MCP se
 # workflow project rules
 
 The project-specific half of [[claude-efficiency]] (general, lives in
-`~/.ai`, symlinked here). Everything below is about *this* project.
+`~/ai-workflow`, symlinked here). Everything below is about *this* project.
 Fill sections as facts are learned; delete ones that never apply.
 
 ## Environment

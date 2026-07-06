@@ -2,7 +2,7 @@
 project: workflow
 type: reference
 audience: both
-updated: 2026-07-05
+updated: 2026-07-06
 tags: [tmux, systemd, dotfiles]
 summary: "Why tmux-resurrect autosave silently died (status off blocks continuum's hook) and the systemd --user timer fix. Units live in dotfiles/.config/systemd/user/."
 ---
@@ -56,11 +56,11 @@ tmux server is running, e.g. right after boot before tmux has started.
 **`~/.config/systemd/user/tmux-resurrect-save.timer`**
 ```ini
 [Unit]
-Description=Run tmux-resurrect save every 15 minutes
+Description=Run tmux-resurrect save every 5 minutes
 
 [Timer]
 OnBootSec=1min
-OnUnitActiveSec=15min
+OnUnitActiveSec=5min
 Unit=tmux-resurrect-save.service
 
 [Install]
@@ -100,3 +100,4 @@ works. Only the interval-save mechanism changed.
   it scheduled every 15 min, and a fresh save file
   (`tmux_resurrect_20260705T110829.txt`) was written immediately after
   enabling the timer.
+- 2026-07-06: interval tightened 15min → 5min (`OnUnitActiveSec=5min`).

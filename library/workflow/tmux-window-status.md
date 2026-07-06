@@ -15,9 +15,10 @@ Claude-session dashboard. Two independent pieces:
 - Window name = **basename of the pane's cwd** (`automatic-rename-format
   "#{b:pane_current_path}"`), so unlabeled windows read as their directory, not
   the running process.
-- **`prefix t`** renames the current window (overrides the rarely-used default
-  clock-mode). A manual rename turns `automatic-rename` off *for that window*, so
-  the label sticks and [[tmux-resurrect]] restores it across restarts.
+- Manual rename via `:rename-window` turns `automatic-rename` off *for that
+  window*, so the label sticks and [[tmux-resurrect]] restores it across
+  restarts. (The `prefix t` rename binding was dropped 2026-07-06; `prefix t`
+  is back to the default clock-mode.)
 - Format is just `#W`, **bold + underline** when current — no index/`*`/separators.
 - Splits (`M-o`/`M-p`) inherit the pane's cwd via `-c "#{pane_current_path}"`.
 
@@ -31,8 +32,9 @@ Rule of thumb: **the show/hide decision must run after the hooks are defined, on
 every source.**
 
 ## Claude marker — `@claude_state` (read/unread)
-A per-window tmux user option. When set, the window name gets a **`-c`** suffix
-and the **whole label is coloured** by state. It works like a read/unread light:
+A per-window tmux user option. When set, the **whole label is coloured** by
+state (the `-c` suffix was dropped 2026-07-06 — colour alone is the marker).
+It works like a read/unread light:
 
 | Value | Label colour | Meaning | Set by |
 |---|---|---|---|
@@ -49,8 +51,8 @@ target the window via `$TMUX_PANE`: `tmux set -w -t "$TMUX_PANE" @claude_state
 — focusing a Claude window clears its colour to grey (guarded so it never touches
 non-Claude windows).
 
-Status format (whole label coloured by state, `-c` suffix):
-`#{?@claude_state,<colour>#W-c#[default],#W}` where `<colour>` is the nested
+Status format (whole label coloured by state):
+`#{?@claude_state,<colour>#W#[default],#W}` where `<colour>` is the nested
 conditional `pending→#[fg=yellow] / done→#[fg=green] / else #[fg=colour244]` (grey).
 The current-window format prepends `#[bold,underscore]`.
 
